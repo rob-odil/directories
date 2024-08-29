@@ -57,6 +57,7 @@ export const moveDirectory = (oldDirectoryStr, newDirectoryStr) => {
         }
     });
     newCurrentDirectory.push(target);
+    newCurrentDirectory.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 export const removeDirectory = (oldDirectoryStr) => {
@@ -70,12 +71,13 @@ export const removeDirectory = (oldDirectoryStr) => {
             if (index === oldDirectory.length - 1) {
                 const index = currentDirectory.indexOf(exist);
                 currentDirectory.splice(index, 1);
+                currentDirectory.sort((a, b) => a.name.localeCompare(b.name));
             } else {
                 parent = currentDirectory;
                 currentDirectory = exist.children;
             }
         } else {
-            throw new Error('Directory not found');
+            throw new Error(`Cannot delete ${oldDirectoryStr} - ${partialDirectory} does not exist`);
         }
     }
 };
