@@ -1,0 +1,32 @@
+{
+  "name": "directories",
+  "version": "1.0.0",
+  "description": "Coding challenge",
+  "main": "directories.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "test": "jest ./src/**/*"
+  },
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "coverageDirectory": "coverage",
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "babel-jest": "^29.7.0"
+  }
+}
